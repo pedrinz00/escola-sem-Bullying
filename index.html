@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Escola Sem Bullying | Respeito e Conscientização</title>
+    <meta name="description" content="Site informativo sobre bullying nas escolas: tipos, efeitos, como agir e prevenir. Juntos por um ambiente escolar seguro e respeitoso.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #f0f7ff 0%, #e9f0fa 100%);
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER & NAVEGAÇÃO ===== */
+        header {
+            background: #0b3b5f;
+            background: linear-gradient(135deg, #0b3b5f, #0a2e4a);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #ffb347;
+            color: #ffe2b5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #1d4e6e, #0f3a52);
+            color: white;
+            padding: 3.5rem 0 4rem;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        .btn-hero {
+            background: #ffb347;
+            color: #1e2a3e;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-hero:hover {
+            background: #ff9f1a;
+            transform: scale(1.02);
+        }
+
+        /* Seções gerais */
+        section {
+            margin: 4rem 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #ffb347;
+            padding-left: 20px;
+            font-weight: 700;
+            color: #0b3b5f;
+        }
+
+        /* Cards tipos de bullying */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transition: all 0.25s;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 28px rgba(0,0,0,0.12);
+        }
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0f3a52;
+        }
+        .card p {
+            color: #2c3e4e;
+        }
+
+        /* Efeitos e dados */
+        .impact-box {
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            background: linear-gradient(135deg, #fff, #fef7e8);
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border: 1px solid #ffe0b5;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #d45a1f;
+        }
+        .stat-label {
+            font-weight: 600;
+            color: #2c5a74;
+        }
+
+        /* Como agir (grid com passos) */
+        .steps-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+        .step {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .step-num {
+            background: #ffb347;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #1e2a3e;
+            margin: 0 auto 1rem;
+        }
+        .step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Depoimento / call to action */
+        .cta-section {
+            background: #0b3b5f;
+            color: white;
+            border-radius: 48px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            background: #ffb347;
+            color: #0b3b5f;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .cta-button:hover {
+            background: #ffa01e;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: #071e2c;
+            color: #cbd5e1;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            border-radius: 32px 32px 0 0;
+        }
+        footer p {
+            margin: 0.3rem 0;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #ffb347;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal para formulário de apoio / denúncia anônima */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            max-width: 480px;
+            width: 90%;
+            border-radius: 32px;
+            padding: 2rem;
+            position: relative;
+            animation: fadeInUp 0.3s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #888;
+        }
+        .modal h3 {
+            color: #0b3b5f;
+            margin-bottom: 1rem;
+        }
+        .modal input, .modal textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 0.8rem 0;
+            border: 1px solid #ccc;
+            border-radius: 28px;
+            font-family: inherit;
+        }
+        .modal button {
+            background: #0b3b5f;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal button:hover {
+            background: #1f5a7e;
+        }
+
+        @media (max-width: 760px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .hero h2 {
+                font-size: 1.9rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        button {
+            background: none;
+            border: none;
+        }
+        .highlight {
+            background: #fff3e0;
+            border-radius: 24px;
+            padding: 0.2rem 0.6rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>🔔 Escola sem Bullying</h1>
+            <p>Respeito começa em cada gesto</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#sobre">O que é</a></li>
+            <li><a href="#tipos">Tipos</a></li>
+            <li><a href="#impacto">Impactos</a></li>
+            <li><a href="#como-agir">Como agir</a></li>
+            <li><a href="#" id="openModalBtn">Apoio anônimo</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container">
+            <h2>Bullying não é brincadeira.<br>É uma ferida invisível.</h2>
+            <p>Vamos construir juntos um ambiente escolar onde todos se sintam seguros, respeitados e acolhidos. Informação é a melhor ferramenta de transformação.</p>
+            <a href="#como-agir" class="btn-hero">Quero ajudar →</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Seção O que é bullying -->
+        <section id="sobre">
+            <div class="impact-box">
+                <h2 class="section-title" style="border-left-color:#ffb347; margin-bottom: 1rem;">O que é bullying?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">Bullying é todo ato de violência física ou psicológica, intencional e repetitivo, que ocorre sem motivação evidente, praticado por um ou mais indivíduos contra uma pessoa, causando dor e angústia. Diferente de conflitos pontuais, o bullying se caracteriza pela <strong>intencionalidade, repetição e desequilíbrio de poder</strong>.</p>
+                <p>Nas escolas, isso pode acontecer em sala, no pátio, nas redes sociais (cyberbullying) e afeta profundamente o desenvolvimento emocional e acadêmico das vítimas.</p>
+                <div style="background:#ffe7d4; border-radius: 24px; padding: 0.8rem 1.5rem; margin-top: 1.5rem;">
+                    📢 <strong>Dado alarmante:</strong> De acordo com a UNESCO, cerca de 1 em cada 3 estudantes já sofreu bullying em algum momento da vida escolar.
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipos de Bullying -->
+        <section id="tipos">
+            <h2 class="section-title">🔍 Tipos de bullying</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🗣️</div>
+                    <h3>Verbal</h3>
+                    <p>Apelidos pejorativos, insultos, xingamentos, humilhações e comentários maldosos sobre aparência, origem ou capacidade.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👊</div>
+                    <h3>Físico</h3>
+                    <p>Bater, chutar, empurrar, danificar pertences ou qualquer agressão corporal que cause dano físico e intimidação.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">😢</div>
+                    <h3>Psicológico</h3>
+                    <p>Ignorar, excluir, ameaçar, isolar a vítima propositalmente, manipular e criar rumores para destruir a reputação.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Cyberbullying</h3>
+                    <p>Ofensas, exposição de dados íntimos, humilhação em redes sociais, grupos de mensagens e jogos online.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impactos na vida escolar e saúde -->
+        <section id="impacto">
+            <h2 class="section-title">⚠️ Consequências reais</h2>
+            <div class="impact-box">
+                <p style="font-size:1.05rem; margin-bottom:1.2rem;">O bullying não deixa marcas apenas emocionais — ele compromete o futuro. As vítimas podem apresentar:</p>
+                <div class="stats">
+                    <div class="stat-item"><div class="stat-number">⬇️ 40%</div><div class="stat-label">queda no rendimento escolar</div></div>
+                    <div class="stat-item"><div class="stat-number">😰 Ansiedade</div><div class="stat-label">Transtornos de ansiedade e depressão</div></div>
+                    <div class="stat-item"><div class="stat-number">🚫 Isolamento</div><div class="stat-label">Falta de pertencimento e evasão escolar</div></div>
+                </div>
+                <p style="margin-top: 1.5rem;">Além disso, os agressores também podem desenvolver comportamentos antissociais e dificuldades futuras. Prevenir é dever de todos.</p>
+            </div>
+        </section>
+
+        <!-- Como agir - Para alunos, pais e escola -->
+        <section id="como-agir">
+            <h2 class="section-title">🤝 Como agir contra o bullying?</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Não se cale</h4>
+                    <p>Converse com um adulto de confiança: professor, coordenador, familiar. Guardar a dor só alimenta o problema.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Apoie a vítima</h4>
+                    <p>Se você testemunha bullying, ofereça suporte. Sua atitude pode quebrar o ciclo de silêncio e medo.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Escola ativa</h4>
+                    <p>As instituições devem ter protocolos, rodas de conversa e canais de denúncia sigilosos para proteger os alunos.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Diálogo em casa</h4>
+                    <p>Pais e responsáveis: criem um ambiente seguro, escutem sem julgamento e ensinem empatia desde cedo.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; background: #eef2f7; border-radius: 28px; padding: 1.5rem; text-align: center;">
+                🌟 <strong>Dica essencial:</strong> Denuncie! Muitas cidades possuem disque-denúncia contra violência escolar. O anonimato é garantido e pode salvar vidas.
+            </div>
+        </section>
+
+        <!-- Depoimento e reflexão -->
+        <div class="cta-section">
+            <h3>💬 "O bullying me ensinou uma coisa: o silêncio não protege ninguém. Quando falei, me senti livre."</h3>
+            <p>— Marina, 16 anos. Hoje ela ajuda colegas em seu colégio.</p>
+            <button id="ctaModalBtn" class="cta-button">💛 Compartilhe sua experiência ou peça ajuda</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">Sobre a iniciativa</a>
+            <a href="#">Canais oficiais de apoio</a>
+            <a href="#">Disque 100 (Direitos Humanos)</a>
+            <a href="#">Cartilha para escolas</a>
+        </div>
+        <p>© 2025 Escola sem Bullying | Campanha de conscientização e combate ao bullying | Respeito é lei.</p>
+        <p style="font-size: 0.8rem;">Em caso de emergência ou risco iminente, procure o conselho tutelar ou polícia mais próxima.</p>
+    </div>
+</footer>
+
+<!-- Modal Formulário de apoio anônimo / mensagem -->
+<div id="supportModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>💬 Espaço de apoio & denúncia anônima</h3>
+        <p style="margin-bottom: 0.5rem;">Você não está sozinho(a). Deixe sua mensagem, desabafo ou denúncia (totalmente anônimo).</p>
+        <form id="anonymousForm">
+            <input type="text" placeholder="Seu nome (opcional)" id="nameInput">
+            <textarea rows="3" placeholder="Conte o que está acontecendo ou como podemos te ajudar..." id="msgInput" required></textarea>
+            <button type="submit" id="sendMsgBtn">Enviar mensagem 💌</button>
+        </form>
+        <p id="formFeedback" style="font-size: 0.85rem; margin-top: 12px; color: #2a7f3e;"></p>
+    </div>
+</div>
+
+<script>
+    // Modal handling
+    const modal = document.getElementById('supportModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const ctaModalBtn = document.getElementById('ctaModalBtn');
+    const closeModalSpan = document.querySelector('.close-modal');
+    const form = document.getElementById('anonymousForm');
+    const feedback = document.getElementById('formFeedback');
+
+    function openModal() {
+        modal.style.display = 'flex';
+        feedback.innerHTML = '';
+        // limpa possíveis mensagens anteriores
+    }
+    function closeModal() {
+        modal.style.display = 'none';
+        // reseta feedback visual
+        feedback.innerHTML = '';
+    }
+
+    openModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
+    ctaModalBtn.addEventListener('click', () => {
+        openModal();
+    });
+    closeModalSpan.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Form submission (simulação de envio com feedback amigável)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msgInput = document.getElementById('msgInput');
+        const nameInput = document.getElementById('nameInput');
+        let message = msgInput.value.trim();
+        if (!message) {
+            feedback.style.color = "#c0392b";
+            feedback.innerHTML = "⚠️ Por favor, escreva sua mensagem. Sua voz é importante.";
+            return;
+        }
+        // Simular envio anônimo respeitoso
+        const nome = nameInput.value.trim() ? nameInput.value.trim() : "Anônimo";
+        console.log(`Mensagem de ${nome}: ${message}`);
+        feedback.style.color = "#2c6e2f";
+        feedback.innerHTML = "✅ Mensagem recebida com sucesso! Você deu um passo importante. Em breve alguém da rede de apoio pode entrar em contato (simulação educativa).";
+        // Limpar campos, mas manter modal aberto por alguns segundos
+        msgInput.value = '';
+        nameInput.value = '';
+        setTimeout(() => {
+            if (modal.style.display === 'flex') {
+                // não fecha automático para não ser invasivo, mas limpa feedback após 5s? melhor manter
+            }
+        }, 100);
+        // Opcional: após 3 segundos reseta o feedback? mas ok.
+        setTimeout(() => {
+            if (feedback.innerHTML.includes("recebida")) {
+                // feedback desaparece gradualmente
+                feedback.style.opacity = '0';
+                setTimeout(() => {
+                    feedback.innerHTML = '';
+                    feedback.style.opacity = '1';
+                }, 800);
+            }
+        }, 4000);
+    });
+
+    // scroll suave para links internos (qualquer ancora)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Fecha modal se estiver aberto
+                if (modal.style.display === 'flex') closeModal();
+            }
+        });
+    });
+    // Caso o botão "Quero ajudar" do hero seja um link, ele já está com href #como-agir
+    // Garantir que qualquer clique funcione sem recarregar bruscamente
+    const heroBtn = document.querySelector('.btn-hero');
+    if(heroBtn) {
+        heroBtn.addEventListener('click', (e) => {
+            const target = document.querySelector('#como-agir');
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+</script>
+</body>
+</html>
