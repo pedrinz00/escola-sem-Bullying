@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Escola Sem Bullying | Informação, Apoio e Prevenção - Guia Completo</title>
+    <title>Bullying Zero | Informação, Apoio e Prevenção - Guia Completo</title>
     <meta name="description" content="Site completo sobre bullying nas escolas: tipos, efeitos, leis, como agir, quiz interativo, guias para pais e professores, canal de apoio anônimo.">
     <style>
         * {
@@ -45,8 +45,12 @@
         }
 
         .logo h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .logo h1 span {
+            color: #ffb347;
         }
         .logo p {
             font-size: 0.75rem;
@@ -85,6 +89,9 @@
             font-size: 2.8rem;
             margin-bottom: 1rem;
             font-weight: 800;
+        }
+        .hero h2 span {
+            color: #ffb347;
         }
         .hero p {
             font-size: 1.2rem;
@@ -483,8 +490,8 @@
 <header>
     <div class="container nav-container">
         <div class="logo">
-            <h1>🔔 Escola sem Bullying</h1>
-            <p>Informação, acolhimento e ação</p>
+            <h1>🔔 <span>Bullying</span> Zero</h1>
+            <p>Tolerância zero ao bullying | Respeito sempre</p>
         </div>
         <ul class="nav-links">
             <li><a href="#sobre">O que é</a></li>
@@ -502,7 +509,7 @@
 <main>
     <div class="hero">
         <div class="container">
-            <h2>Bullying não é brincadeira.<br>É uma ferida invisível.</h2>
+            <h2>Bullying <span>Zero</span><br>É uma ferida invisível.</h2>
             <p>Vamos construir juntos um ambiente escolar onde todos se sintam seguros, respeitados e acolhidos. Informação é a melhor ferramenta de transformação.</p>
             <a href="#como-agir" class="btn-hero">Quero ajudar →</a>
         </div>
@@ -733,13 +740,13 @@
 <footer>
     <div class="container">
         <div class="footer-links">
-            <a href="#">Sobre a iniciativa</a>
+            <a href="#">Sobre o Bullying Zero</a>
             <a href="#">Canais oficiais de apoio</a>
             <a href="#">Disque 100 (Direitos Humanos)</a>
             <a href="#">Cartilha para escolas</a>
             <a href="#">Denuncie aqui</a>
         </div>
-        <p>© 2025 Escola sem Bullying | Campanha de conscientização e combate ao bullying | Respeito é lei.</p>
+        <p>© 2025 Bullying Zero | Campanha de conscientização e combate ao bullying | Tolerância zero ao bullying</p>
         <p style="font-size: 0.8rem;">Em caso de emergência ou risco iminente, procure o conselho tutelar ou polícia mais próxima.</p>
         <p style="font-size: 0.7rem; margin-top: 1rem;">Site desenvolvido para conscientização - Todo conteúdo é educativo e gratuito.</p>
     </div>
@@ -889,9 +896,9 @@
 
     // Botão de compartilhar
     document.getElementById('supportBtn')?.addEventListener('click', () => {
-        alert("💛 Compartilhe este site com amigos, pais e professores! Juntos podemos combater o bullying.");
+        alert("💛 Compartilhe o Bullying Zero com amigos, pais e professores! Juntos podemos combater o bullying.");
         if (navigator.share) {
-            navigator.share({ title: 'Escola sem Bullying', url: window.location.href });
+            navigator.share({ title: 'Bullying Zero', url: window.location.href });
         }
     });
 </script>
