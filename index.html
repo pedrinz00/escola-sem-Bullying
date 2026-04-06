@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Escola Sem Bullying | Respeito e Conscientização</title>
-    <meta name="description" content="Site informativo sobre bullying nas escolas: tipos, efeitos, como agir e prevenir. Juntos por um ambiente escolar seguro e respeitoso.">
+    <title>Escola Sem Bullying | Informação, Apoio e Prevenção</title>
+    <meta name="description" content="Site completo sobre bullying nas escolas: tipos, efeitos, leis, como agir, quiz interativo e canal de apoio anônimo.">
     <style>
         * {
             margin: 0;
@@ -20,16 +20,14 @@
             scroll-behavior: smooth;
         }
 
-        /* Container principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* ===== HEADER & NAVEGAÇÃO ===== */
+        /* Header */
         header {
-            background: #0b3b5f;
             background: linear-gradient(135deg, #0b3b5f, #0a2e4a);
             color: white;
             padding: 1rem 0;
@@ -48,7 +46,6 @@
 
         .logo h1 {
             font-size: 1.6rem;
-            letter-spacing: -0.5px;
             font-weight: 700;
         }
         .logo p {
@@ -60,6 +57,7 @@
             display: flex;
             gap: 1.8rem;
             list-style: none;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -74,7 +72,7 @@
             color: #ffe2b5;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             background: linear-gradient(120deg, #1d4e6e, #0f3a52);
             color: white;
@@ -104,7 +102,6 @@
             border-radius: 40px;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             text-decoration: none;
             display: inline-block;
         }
@@ -113,7 +110,6 @@
             transform: scale(1.02);
         }
 
-        /* Seções gerais */
         section {
             margin: 4rem 0;
         }
@@ -126,7 +122,7 @@
             color: #0b3b5f;
         }
 
-        /* Cards tipos de bullying */
+        /* Cards */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -140,7 +136,6 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.08);
             transition: all 0.25s;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
         }
         .card:hover {
             transform: translateY(-6px);
@@ -155,19 +150,13 @@
             margin-bottom: 1rem;
             color: #0f3a52;
         }
-        .card p {
-            color: #2c3e4e;
-        }
 
-        /* Efeitos e dados */
+        /* Impact box */
         .impact-box {
-            background: #ffffffd9;
-            backdrop-filter: blur(4px);
             background: linear-gradient(135deg, #fff, #fef7e8);
             border-radius: 32px;
             padding: 2rem;
             box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            border: 1px solid #ffe0b5;
         }
         .stats {
             display: flex;
@@ -186,12 +175,8 @@
             font-weight: 800;
             color: #d45a1f;
         }
-        .stat-label {
-            font-weight: 600;
-            color: #2c5a74;
-        }
 
-        /* Como agir (grid com passos) */
+        /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
@@ -206,7 +191,6 @@
             min-width: 200px;
             text-align: center;
             box-shadow: 0 8px 18px rgba(0,0,0,0.05);
-            transition: 0.2s;
         }
         .step-num {
             background: #ffb347;
@@ -218,15 +202,112 @@
             justify-content: center;
             font-size: 1.6rem;
             font-weight: bold;
-            color: #1e2a3e;
             margin: 0 auto 1rem;
         }
-        .step h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+
+        /* Accordion (perguntas frequentes) */
+        .accordion-item {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .accordion-header {
+            background: #fff;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .accordion-header:hover {
+            background: #f5f0e8;
+        }
+        .accordion-header .arrow {
+            transition: transform 0.3s;
+        }
+        .accordion-item.active .accordion-header .arrow {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            padding: 0 1.5rem;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fefcf8;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 300px;
+            padding: 0 1.5rem 1.2rem 1.5rem;
         }
 
-        /* Depoimento / call to action */
+        /* Quiz */
+        .quiz-container {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        .quiz-question {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .quiz-option {
+            display: block;
+            margin: 0.8rem 0;
+            padding: 12px 16px;
+            background: #f0f4f9;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .quiz-option:hover {
+            background: #ffe0b5;
+        }
+        .quiz-option.selected {
+            background: #ffb347;
+            color: #1e2a3e;
+            font-weight: bold;
+        }
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 20px;
+        }
+        .quiz-next {
+            margin-top: 1rem;
+            background: #0b3b5f;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+            border-left: 3px solid #ffb347;
+            padding-left: 1.5rem;
+            margin-left: 1rem;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: #d45a1f;
+            font-size: 1.2rem;
+        }
+
+        /* CTA */
         .cta-section {
             background: #0b3b5f;
             color: white;
@@ -234,10 +315,6 @@
             padding: 3rem 2rem;
             text-align: center;
             margin: 3rem 0;
-        }
-        .cta-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
         }
         .cta-button {
             background: #ffb347;
@@ -249,14 +326,8 @@
             font-size: 1rem;
             margin-top: 1rem;
             cursor: pointer;
-            transition: 0.2s;
-        }
-        .cta-button:hover {
-            background: #ffa01e;
-            transform: scale(1.02);
         }
 
-        /* Footer */
         footer {
             background: #071e2c;
             color: #cbd5e1;
@@ -264,9 +335,6 @@
             margin-top: 4rem;
             text-align: center;
             border-radius: 32px 32px 0 0;
-        }
-        footer p {
-            margin: 0.3rem 0;
         }
         .footer-links {
             display: flex;
@@ -279,11 +347,8 @@
             color: #ffb347;
             text-decoration: none;
         }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
 
-        /* Modal para formulário de apoio / denúncia anônima */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -301,17 +366,6 @@
             border-radius: 32px;
             padding: 2rem;
             position: relative;
-            animation: fadeInUp 0.3s ease;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         .close-modal {
             position: absolute;
@@ -319,11 +373,6 @@
             right: 1.2rem;
             font-size: 1.8rem;
             cursor: pointer;
-            color: #888;
-        }
-        .modal h3 {
-            color: #0b3b5f;
-            margin-bottom: 1rem;
         }
         .modal input, .modal textarea {
             width: 100%;
@@ -331,7 +380,6 @@
             margin: 0.8rem 0;
             border: 1px solid #ccc;
             border-radius: 28px;
-            font-family: inherit;
         }
         .modal button {
             background: #0b3b5f;
@@ -343,35 +391,11 @@
             font-weight: bold;
             cursor: pointer;
         }
-        .modal button:hover {
-            background: #1f5a7e;
-        }
 
         @media (max-width: 760px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            .hero h2 {
-                font-size: 1.9rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .stats {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        button {
-            background: none;
-            border: none;
-        }
-        .highlight {
-            background: #fff3e0;
-            border-radius: 24px;
-            padding: 0.2rem 0.6rem;
-            font-weight: bold;
+            .nav-container { flex-direction: column; gap: 0.8rem; }
+            .hero h2 { font-size: 1.9rem; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -381,20 +405,21 @@
     <div class="container nav-container">
         <div class="logo">
             <h1>🔔 Escola sem Bullying</h1>
-            <p>Respeito começa em cada gesto</p>
+            <p>Informação, acolhimento e ação</p>
         </div>
         <ul class="nav-links">
             <li><a href="#sobre">O que é</a></li>
             <li><a href="#tipos">Tipos</a></li>
             <li><a href="#impacto">Impactos</a></li>
             <li><a href="#como-agir">Como agir</a></li>
-            <li><a href="#" id="openModalBtn">Apoio anônimo</a></li>
+            <li><a href="#leis">Leis</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#" id="openModalBtn">Apoio</a></li>
         </ul>
     </div>
 </header>
 
 <main>
-    <!-- Hero -->
     <div class="hero">
         <div class="container">
             <h2>Bullying não é brincadeira.<br>É uma ferida invisível.</h2>
@@ -407,8 +432,8 @@
         <!-- Seção O que é bullying -->
         <section id="sobre">
             <div class="impact-box">
-                <h2 class="section-title" style="border-left-color:#ffb347; margin-bottom: 1rem;">O que é bullying?</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 1rem;">Bullying é todo ato de violência física ou psicológica, intencional e repetitivo, que ocorre sem motivação evidente, praticado por um ou mais indivíduos contra uma pessoa, causando dor e angústia. Diferente de conflitos pontuais, o bullying se caracteriza pela <strong>intencionalidade, repetição e desequilíbrio de poder</strong>.</p>
+                <h2 class="section-title" style="border-left-color:#ffb347;">O que é bullying?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">Bullying é todo ato de violência física ou psicológica, <strong>intencional e repetitivo</strong>, que ocorre sem motivação evidente, praticado por um ou mais indivíduos contra uma pessoa, causando dor e angústia. Diferente de conflitos pontuais, o bullying se caracteriza pela <strong>intencionalidade, repetição e desequilíbrio de poder</strong>.</p>
                 <p>Nas escolas, isso pode acontecer em sala, no pátio, nas redes sociais (cyberbullying) e afeta profundamente o desenvolvimento emocional e acadêmico das vítimas.</p>
                 <div style="background:#ffe7d4; border-radius: 24px; padding: 0.8rem 1.5rem; margin-top: 1.5rem;">
                     📢 <strong>Dado alarmante:</strong> De acordo com a UNESCO, cerca de 1 em cada 3 estudantes já sofreu bullying em algum momento da vida escolar.
@@ -420,30 +445,16 @@
         <section id="tipos">
             <h2 class="section-title">🔍 Tipos de bullying</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🗣️</div>
-                    <h3>Verbal</h3>
-                    <p>Apelidos pejorativos, insultos, xingamentos, humilhações e comentários maldosos sobre aparência, origem ou capacidade.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">👊</div>
-                    <h3>Físico</h3>
-                    <p>Bater, chutar, empurrar, danificar pertences ou qualquer agressão corporal que cause dano físico e intimidação.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">😢</div>
-                    <h3>Psicológico</h3>
-                    <p>Ignorar, excluir, ameaçar, isolar a vítima propositalmente, manipular e criar rumores para destruir a reputação.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📱</div>
-                    <h3>Cyberbullying</h3>
-                    <p>Ofensas, exposição de dados íntimos, humilhação em redes sociais, grupos de mensagens e jogos online.</p>
-                </div>
+                <div class="card"><div class="card-icon">🗣️</div><h3>Verbal</h3><p>Apelidos pejorativos, insultos, xingamentos, humilhações e comentários maldosos.</p></div>
+                <div class="card"><div class="card-icon">👊</div><h3>Físico</h3><p>Bater, chutar, empurrar, danificar pertences ou qualquer agressão corporal.</p></div>
+                <div class="card"><div class="card-icon">😢</div><h3>Psicológico</h3><p>Ignorar, excluir, ameaçar, isolar a vítima propositalmente, criar rumores.</p></div>
+                <div class="card"><div class="card-icon">📱</div><h3>Cyberbullying</h3><p>Ofensas, exposição de dados íntimos, humilhação em redes sociais e jogos online.</p></div>
+                <div class="card"><div class="card-icon">❤️‍🩹</div><h3>Sexual</h3><p>Comentários obscenos, toques indesejados, divulgação de fotos íntimas sem autorização.</p></div>
+                <div class="card"><div class="card-icon">📚</div><h3>Material</h3><p>Roubar, esconder ou danificar pertences do colega repetidamente.</p></div>
             </div>
         </section>
 
-        <!-- Impactos na vida escolar e saúde -->
+        <!-- Impactos -->
         <section id="impacto">
             <h2 class="section-title">⚠️ Consequências reais</h2>
             <div class="impact-box">
@@ -457,37 +468,63 @@
             </div>
         </section>
 
-        <!-- Como agir - Para alunos, pais e escola -->
+        <!-- Como agir -->
         <section id="como-agir">
             <h2 class="section-title">🤝 Como agir contra o bullying?</h2>
             <div class="steps-grid">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Não se cale</h4>
-                    <p>Converse com um adulto de confiança: professor, coordenador, familiar. Guardar a dor só alimenta o problema.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Apoie a vítima</h4>
-                    <p>Se você testemunha bullying, ofereça suporte. Sua atitude pode quebrar o ciclo de silêncio e medo.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>Escola ativa</h4>
-                    <p>As instituições devem ter protocolos, rodas de conversa e canais de denúncia sigilosos para proteger os alunos.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h4>Diálogo em casa</h4>
-                    <p>Pais e responsáveis: criem um ambiente seguro, escutem sem julgamento e ensinem empatia desde cedo.</p>
-                </div>
-            </div>
-            <div style="margin-top: 2rem; background: #eef2f7; border-radius: 28px; padding: 1.5rem; text-align: center;">
-                🌟 <strong>Dica essencial:</strong> Denuncie! Muitas cidades possuem disque-denúncia contra violência escolar. O anonimato é garantido e pode salvar vidas.
+                <div class="step"><div class="step-num">1</div><h4>Não se cale</h4><p>Converse com um adulto de confiança: professor, coordenador, familiar.</p></div>
+                <div class="step"><div class="step-num">2</div><h4>Apoie a vítima</h4><p>Se você testemunha bullying, ofereça suporte. Sua atitude pode quebrar o ciclo.</p></div>
+                <div class="step"><div class="step-num">3</div><h4>Escola ativa</h4><p>Instituições devem ter protocolos, rodas de conversa e canais de denúncia sigilosos.</p></div>
+                <div class="step"><div class="step-num">4</div><h4>Diálogo em casa</h4><p>Pais: criem ambiente seguro, escutem sem julgamento e ensinem empatia.</p></div>
             </div>
         </section>
 
-        <!-- Depoimento e reflexão -->
+        <!-- Leis e direitos (Timeline) -->
+        <section id="leis">
+            <h2 class="section-title">⚖️ Leis contra o bullying no Brasil</h2>
+            <div class="impact-box">
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-year">2015 - Lei 13.185</div><p>Institui o Programa de Combate à Intimidação Sistemática (Bullying). Define o bullying e obriga escolas a prevenir e combater.</p></div>
+                    <div class="timeline-item"><div class="timeline-year">2016 - Lei 13.277</div><p>Inclui atividades de conscientização sobre bullying no calendário escolar.</p></div>
+                    <div class="timeline-item"><div class="timeline-year">2024 - Lei 14.811</div><p><strong>Pacote Anti-Bullying:</strong> torna o bullying crime, com penas de multa a detenção (2 a 4 anos). Cyberbullying tem pena maior (3 a 5 anos).</p></div>
+                </div>
+                <p style="margin-top: 1rem;">📞 <strong>Canais oficiais:</strong> Disque 100 (Direitos Humanos) | Conselho Tutelar | Delegacia da Criança e do Adolescente</p>
+            </div>
+        </section>
+
+        <!-- Perguntas Frequentes (Accordion) -->
+        <section>
+            <h2 class="section-title">❓ Perguntas frequentes</h2>
+            <div class="accordion-item">
+                <div class="accordion-header">O que fazer se meu filho sofre bullying e a escola não age? <span class="arrow">▶</span></div>
+                <div class="accordion-content">Registre tudo por escrito, procure o Conselho Tutelar, e se necessário, acione o Ministério Público. A escola é obrigada por lei a agir.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Bullying é crime no Brasil? <span class="arrow">▶</span></div>
+                <div class="accordion-content">Sim, desde 2024 com a Lei 14.811. Bullying pode gerar multa e detenção. Cyberbullying tem pena de 3 a 5 anos.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Como diferenciar bullying de brincadeira? <span class="arrow">▶</span></div>
+                <div class="accordion-content">Brincadeira é mútua e todos se divertem. Bullying é repetitivo, há desequilíbrio de poder e a vítima sofre.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">O que é cyberbullying? <span class="arrow">▶</span></div>
+                <div class="accordion-content">É o bullying praticado em meios digitais: redes sociais, WhatsApp, e-mail, jogos online. Atinge a vítima 24h por dia.</div>
+            </div>
+        </section>
+
+        <!-- Quiz interativo -->
+        <section id="quiz">
+            <h2 class="section-title">📝 Teste seus conhecimentos</h2>
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div id="quizOptions"></div>
+                <div id="quizFeedback" class="quiz-feedback"></div>
+                <button id="quizNextBtn" class="quiz-next">Próxima →</button>
+            </div>
+        </section>
+
+        <!-- CTA e depoimento -->
         <div class="cta-section">
             <h3>💬 "O bullying me ensinou uma coisa: o silêncio não protege ninguém. Quando falei, me senti livre."</h3>
             <p>— Marina, 16 anos. Hoje ela ajuda colegas em seu colégio.</p>
@@ -509,116 +546,138 @@
     </div>
 </footer>
 
-<!-- Modal Formulário de apoio anônimo / mensagem -->
+<!-- Modal -->
 <div id="supportModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <h3>💬 Espaço de apoio & denúncia anônima</h3>
-        <p style="margin-bottom: 0.5rem;">Você não está sozinho(a). Deixe sua mensagem, desabafo ou denúncia (totalmente anônimo).</p>
+        <p>Você não está sozinho(a). Deixe sua mensagem, desabafo ou denúncia (totalmente anônimo).</p>
         <form id="anonymousForm">
             <input type="text" placeholder="Seu nome (opcional)" id="nameInput">
             <textarea rows="3" placeholder="Conte o que está acontecendo ou como podemos te ajudar..." id="msgInput" required></textarea>
-            <button type="submit" id="sendMsgBtn">Enviar mensagem 💌</button>
+            <button type="submit">Enviar mensagem 💌</button>
         </form>
-        <p id="formFeedback" style="font-size: 0.85rem; margin-top: 12px; color: #2a7f3e;"></p>
+        <p id="formFeedback" style="font-size: 0.85rem; margin-top: 12px;"></p>
     </div>
 </div>
 
 <script>
-    // Modal handling
+    // ========== ACCORDION ==========
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+
+    // ========== QUIZ ==========
+    const quizData = [
+        { question: "O que caracteriza o bullying?", options: ["Uma brincadeira isolada", "Ato intencional, repetitivo e com desequilíbrio de poder", "Apenas agressão física", "Discussão entre amigos"], correct: 1 },
+        { question: "Qual lei tornou o bullying crime no Brasil?", options: ["Lei 13.185/2015", "Lei 14.811/2024", "Lei 8.069/1990 (ECA)", "Lei 11.340/2006"], correct: 1 },
+        { question: "Cyberbullying é:", options: ["Bullying apenas em jogos", "Bullying praticado em meios digitais", "Apenas comentários em redes sociais", "Menos grave que bullying presencial"], correct: 1 },
+        { question: "Qual atitude NÃO é recomendada para quem testemunha bullying?", options: ["Apoiar a vítima", "Rir junto com o agressor", "Informar um adulto", "Convidar a vítima para se sentar perto"], correct: 1 },
+        { question: "Qual a porcentagem aproximada de estudantes que já sofreram bullying (UNESCO)?", options: ["1 em cada 10", "1 em cada 3", "1 em cada 2", "1 em cada 5"], correct: 1 }
+    ];
+    let currentQuiz = 0;
+    let selectedOption = null;
+
+    function loadQuiz() {
+        const q = quizData[currentQuiz];
+        document.getElementById('quizQuestion').innerText = q.question;
+        const optionsDiv = document.getElementById('quizOptions');
+        optionsDiv.innerHTML = '';
+        q.options.forEach((opt, idx) => {
+            const optDiv = document.createElement('div');
+            optDiv.className = 'quiz-option';
+            optDiv.innerText = opt;
+            optDiv.dataset.idx = idx;
+            optDiv.addEventListener('click', () => {
+                document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+                optDiv.classList.add('selected');
+                selectedOption = idx;
+                document.getElementById('quizFeedback').innerHTML = '';
+            });
+            optionsDiv.appendChild(optDiv);
+        });
+        document.getElementById('quizFeedback').innerHTML = '';
+        selectedOption = null;
+    }
+
+    document.getElementById('quizNextBtn').addEventListener('click', () => {
+        if (selectedOption === null) {
+            document.getElementById('quizFeedback').innerHTML = '<span style="color:#c0392b;">⚠️ Selecione uma resposta!</span>';
+            return;
+        }
+        const isCorrect = (selectedOption === quizData[currentQuiz].correct);
+        const feedbackDiv = document.getElementById('quizFeedback');
+        if (isCorrect) {
+            feedbackDiv.innerHTML = '<span style="color:#2c6e2f;">✅ Correto! Muito bem.</span>';
+            feedbackDiv.style.background = '#e0f2e0';
+        } else {
+            const correctText = quizData[currentQuiz].options[quizData[currentQuiz].correct];
+            feedbackDiv.innerHTML = `<span style="color:#c0392b;">❌ Incorreto. A resposta correta é: "${correctText}"</span>`;
+            feedbackDiv.style.background = '#ffe0e0';
+        }
+        setTimeout(() => {
+            currentQuiz++;
+            if (currentQuiz < quizData.length) {
+                loadQuiz();
+            } else {
+                document.getElementById('quizQuestion').innerText = "🎉 Quiz concluído! Você aprendeu muito sobre bullying!";
+                document.getElementById('quizOptions').innerHTML = '<p style="text-align:center">Parabéns por buscar conhecimento! Compartilhe com amigos.</p>';
+                document.getElementById('quizNextBtn').style.display = 'none';
+                feedbackDiv.innerHTML = '<span style="color:#0b3b5f;">Você é parte da solução contra o bullying! 💪</span>';
+                feedbackDiv.style.background = '#e0f0ff';
+            }
+        }, 1500);
+    });
+    loadQuiz();
+
+    // ========== MODAL ==========
     const modal = document.getElementById('supportModal');
     const openModalBtn = document.getElementById('openModalBtn');
     const ctaModalBtn = document.getElementById('ctaModalBtn');
     const closeModalSpan = document.querySelector('.close-modal');
     const form = document.getElementById('anonymousForm');
-    const feedback = document.getElementById('formFeedback');
+    const feedbackSpan = document.getElementById('formFeedback');
 
-    function openModal() {
-        modal.style.display = 'flex';
-        feedback.innerHTML = '';
-        // limpa possíveis mensagens anteriores
-    }
-    function closeModal() {
-        modal.style.display = 'none';
-        // reseta feedback visual
-        feedback.innerHTML = '';
-    }
-
-    openModalBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-    });
-    ctaModalBtn.addEventListener('click', () => {
-        openModal();
-    });
+    function openModal() { modal.style.display = 'flex'; feedbackSpan.innerHTML = ''; }
+    function closeModal() { modal.style.display = 'none'; feedbackSpan.innerHTML = ''; }
+    openModalBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    ctaModalBtn.addEventListener('click', () => openModal());
     closeModalSpan.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
+    window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-    // Form submission (simulação de envio com feedback amigável)
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const msgInput = document.getElementById('msgInput');
-        const nameInput = document.getElementById('nameInput');
-        let message = msgInput.value.trim();
-        if (!message) {
-            feedback.style.color = "#c0392b";
-            feedback.innerHTML = "⚠️ Por favor, escreva sua mensagem. Sua voz é importante.";
+        const msg = document.getElementById('msgInput').value.trim();
+        if (!msg) {
+            feedbackSpan.style.color = "#c0392b";
+            feedbackSpan.innerHTML = "⚠️ Por favor, escreva sua mensagem.";
             return;
         }
-        // Simular envio anônimo respeitoso
-        const nome = nameInput.value.trim() ? nameInput.value.trim() : "Anônimo";
-        console.log(`Mensagem de ${nome}: ${message}`);
-        feedback.style.color = "#2c6e2f";
-        feedback.innerHTML = "✅ Mensagem recebida com sucesso! Você deu um passo importante. Em breve alguém da rede de apoio pode entrar em contato (simulação educativa).";
-        // Limpar campos, mas manter modal aberto por alguns segundos
-        msgInput.value = '';
-        nameInput.value = '';
-        setTimeout(() => {
-            if (modal.style.display === 'flex') {
-                // não fecha automático para não ser invasivo, mas limpa feedback após 5s? melhor manter
-            }
-        }, 100);
-        // Opcional: após 3 segundos reseta o feedback? mas ok.
-        setTimeout(() => {
-            if (feedback.innerHTML.includes("recebida")) {
-                // feedback desaparece gradualmente
-                feedback.style.opacity = '0';
-                setTimeout(() => {
-                    feedback.innerHTML = '';
-                    feedback.style.opacity = '1';
-                }, 800);
-            }
-        }, 4000);
+        const nome = document.getElementById('nameInput').value.trim() || "Anônimo";
+        console.log(`Mensagem de ${nome}: ${msg}`);
+        feedbackSpan.style.color = "#2c6e2f";
+        feedbackSpan.innerHTML = "✅ Mensagem recebida! Você deu um passo importante. (Simulação educativa)";
+        document.getElementById('msgInput').value = '';
+        document.getElementById('nameInput').value = '';
+        setTimeout(() => { if (modal.style.display === 'flex') feedbackSpan.innerHTML = ''; }, 3000);
     });
 
-    // scroll suave para links internos (qualquer ancora)
+    // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === "#" || href === "") return;
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
+            const target = document.querySelector(href);
+            if (target) {
                 e.preventDefault();
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                // Fecha modal se estiver aberto
+                target.scrollIntoView({ behavior: 'smooth' });
                 if (modal.style.display === 'flex') closeModal();
             }
         });
     });
-    // Caso o botão "Quero ajudar" do hero seja um link, ele já está com href #como-agir
-    // Garantir que qualquer clique funcione sem recarregar bruscamente
-    const heroBtn = document.querySelector('.btn-hero');
-    if(heroBtn) {
-        heroBtn.addEventListener('click', (e) => {
-            const target = document.querySelector('#como-agir');
-            if(target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
 </script>
 </body>
 </html>
