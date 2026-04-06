@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Escola Sem Bullying | Informação, Apoio e Prevenção</title>
-    <meta name="description" content="Site completo sobre bullying nas escolas: tipos, efeitos, leis, como agir, quiz interativo e canal de apoio anônimo.">
+    <title>Escola Sem Bullying | Informação, Apoio e Prevenção - Guia Completo</title>
+    <meta name="description" content="Site completo sobre bullying nas escolas: tipos, efeitos, leis, como agir, quiz interativo, guias para pais e professores, canal de apoio anônimo.">
     <style>
         * {
             margin: 0;
@@ -205,7 +205,7 @@
             margin: 0 auto 1rem;
         }
 
-        /* Accordion (perguntas frequentes) */
+        /* Accordion */
         .accordion-item {
             background: white;
             border-radius: 20px;
@@ -307,6 +307,76 @@
             font-size: 1.2rem;
         }
 
+        /* Guia duplo (pais e professores) */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .guide-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        .guide-card h3 {
+            color: #0b3b5f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .guide-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .guide-card li {
+            margin: 0.8rem 0;
+        }
+
+        /* Depoimentos */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonial {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            font-style: italic;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border-left: 4px solid #ffb347;
+        }
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #0b3b5f;
+        }
+
+        /* Video embed simulado */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .video-card {
+            background: #1e2a3e;
+            border-radius: 20px;
+            overflow: hidden;
+            color: white;
+        }
+        .video-placeholder {
+            background: #0b3b5f;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .video-card p {
+            padding: 1rem;
+            text-align: center;
+        }
+
         /* CTA */
         .cta-section {
             background: #0b3b5f;
@@ -392,6 +462,15 @@
             cursor: pointer;
         }
 
+        /* Contador de visitas */
+        .counter {
+            text-align: center;
+            padding: 1rem;
+            background: #e9ecef;
+            border-radius: 60px;
+            margin: 1rem 0;
+        }
+
         @media (max-width: 760px) {
             .nav-container { flex-direction: column; gap: 0.8rem; }
             .hero h2 { font-size: 1.9rem; }
@@ -413,6 +492,7 @@
             <li><a href="#impacto">Impactos</a></li>
             <li><a href="#como-agir">Como agir</a></li>
             <li><a href="#leis">Leis</a></li>
+            <li><a href="#guias">Guias</a></li>
             <li><a href="#quiz">Quiz</a></li>
             <li><a href="#" id="openModalBtn">Apoio</a></li>
         </ul>
@@ -429,6 +509,11 @@
     </div>
 
     <div class="container">
+        <!-- Contador de visitas simulado -->
+        <div class="counter" id="visitCounter">
+            🌟 Juntos somos mais fortes: <span id="counterValue">12.847</span> pessoas já se informaram aqui!
+        </div>
+
         <!-- Seção O que é bullying -->
         <section id="sobre">
             <div class="impact-box">
@@ -451,6 +536,22 @@
                 <div class="card"><div class="card-icon">📱</div><h3>Cyberbullying</h3><p>Ofensas, exposição de dados íntimos, humilhação em redes sociais e jogos online.</p></div>
                 <div class="card"><div class="card-icon">❤️‍🩹</div><h3>Sexual</h3><p>Comentários obscenos, toques indesejados, divulgação de fotos íntimas sem autorização.</p></div>
                 <div class="card"><div class="card-icon">📚</div><h3>Material</h3><p>Roubar, esconder ou danificar pertences do colega repetidamente.</p></div>
+                <div class="card"><div class="card-icon">🌐</div><h3>Social</h3><p>Exclusão proposital de grupos, espalhar fofocas, quebrar amizades.</p></div>
+                <div class="card"><div class="card-icon">🏳️‍🌈</div><h3>Preconceituoso</h3><p>Ataques baseados em raça, religião, orientação sexual, gênero ou deficiência.</p></div>
+            </div>
+        </section>
+
+        <!-- Estatísticas Globais -->
+        <section>
+            <h2 class="section-title">📊 Estatísticas Globais</h2>
+            <div class="impact-box">
+                <div class="stats">
+                    <div class="stat-item"><div class="stat-number">30%</div><div class="stat-label">dos alunos sofrem bullying regularmente</div></div>
+                    <div class="stat-item"><div class="stat-number">2x</div><div class="stat-label">mais chances de faltar à escola</div></div>
+                    <div class="stat-item"><div class="stat-number">70%</div><div class="stat-label">dos jovens já presenciaram bullying</div></div>
+                    <div class="stat-item"><div class="stat-number">40%</div><div class="stat-label">não contam a ninguém</div></div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center;">Fonte: UNESCO, IBGE e Pesquisa Nacional de Saúde do Escolar (PeNSE)</p>
             </div>
         </section>
 
@@ -476,6 +577,50 @@
                 <div class="step"><div class="step-num">2</div><h4>Apoie a vítima</h4><p>Se você testemunha bullying, ofereça suporte. Sua atitude pode quebrar o ciclo.</p></div>
                 <div class="step"><div class="step-num">3</div><h4>Escola ativa</h4><p>Instituições devem ter protocolos, rodas de conversa e canais de denúncia sigilosos.</p></div>
                 <div class="step"><div class="step-num">4</div><h4>Diálogo em casa</h4><p>Pais: criem ambiente seguro, escutem sem julgamento e ensinem empatia.</p></div>
+                <div class="step"><div class="step-num">5</div><h4>Registre tudo</h4><p>Guarde prints, fotos, datas e horários. As provas são essenciais.</p></div>
+                <div class="step"><div class="step-num">6</div><h4>Procure ajuda profissional</h4><p>Psicólogos e assistentes sociais podem ajudar vítimas e agressores.</p></div>
+            </div>
+        </section>
+
+        <!-- Guias para Pais e Professores -->
+        <section id="guias">
+            <h2 class="section-title">📖 Guias práticos</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>👨‍👩‍👧‍👦 Para Pais</h3>
+                    <ul>
+                        <li>🔹 Observe mudanças de comportamento</li>
+                        <li>🔹 Converse diariamente sobre a escola</li>
+                        <li>🔹 Nunca minimize o sofrimento do seu filho</li>
+                        <li>🔹 Ensine seu filho a dizer "PARE" com firmeza</li>
+                        <li>🔹 Mantenha contato com a escola</li>
+                        <li>🔹 Monitore redes sociais sem invasão</li>
+                        <li>🔹 Seja exemplo de respeito em casa</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>👩‍🏫 Para Professores</h3>
+                    <ul>
+                        <li>🔹 Crie um ambiente de respeito em sala</li>
+                        <li>🔹 Identifique sinais de bullying precocemente</li>
+                        <li>🔹 Intervenha imediatamente ao presenciar</li>
+                        <li>🔹 Trabalhe empatia em projetos pedagógicos</li>
+                        <li>🔹 Ofereça canais seguros de denúncia</li>
+                        <li>🔹 Capacite-se para lidar com o tema</li>
+                        <li>🔹 Nunca ignore ou normalize agressões</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>🏫 Para Escolas</h3>
+                    <ul>
+                        <li>🔹 Implemente protocolos anti-bullying</li>
+                        <li>🔹 Crie comitês de combate ao bullying</li>
+                        <li>🔹 Realize assembleias e rodas de conversa</li>
+                        <li>🔹 Ofereça apoio psicológico gratuito</li>
+                        <li>🔹 Envolva as famílias nas ações</li>
+                        <li>🔹 Capacite toda a equipe anualmente</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -488,8 +633,51 @@
                     <div class="timeline-item"><div class="timeline-year">2016 - Lei 13.277</div><p>Inclui atividades de conscientização sobre bullying no calendário escolar.</p></div>
                     <div class="timeline-item"><div class="timeline-year">2024 - Lei 14.811</div><p><strong>Pacote Anti-Bullying:</strong> torna o bullying crime, com penas de multa a detenção (2 a 4 anos). Cyberbullying tem pena maior (3 a 5 anos).</p></div>
                 </div>
-                <p style="margin-top: 1rem;">📞 <strong>Canais oficiais:</strong> Disque 100 (Direitos Humanos) | Conselho Tutelar | Delegacia da Criança e do Adolescente</p>
+                <p style="margin-top: 1rem;">📞 <strong>Canais oficiais:</strong> Disque 100 (Direitos Humanos) | Conselho Tutelar | Delegacia da Criança e do Adolescente | 180 (Mulher - para casos de violência de gênero)</p>
             </div>
+        </section>
+
+        <!-- Depoimentos Reais -->
+        <section>
+            <h2 class="section-title">💬 Depoimentos que inspiram</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    "Depois que contei para minha mãe, tudo mudou. Ela foi na escola e o bullying parou. Não se cale!"
+                    <div class="testimonial-author">— Ana, 14 anos</div>
+                </div>
+                <div class="testimonial">
+                    "Como professora, já vi muitos casos. O que funciona é acolher e agir rápido. Cada aluno importa."
+                    <div class="testimonial-author">— Carla, professora há 12 anos</div>
+                </div>
+                <div class="testimonial">
+                    "Eu era agressor. Ninguém me ensinou a lidar com minhas emoções. Terapia me ajudou a mudar."
+                    <div class="testimonial-author">— Rafael, 17 anos (nome fictício)</div>
+                </div>
+                <div class="testimonial">
+                    "Meu filho sofreu bullying por 2 anos. Aprendi que pai não pode esperar. Hoje ele está bem."
+                    <div class="testimonial-author">— Marcos, pai da Ana Luísa</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vídeos educativos (embed simulado) -->
+        <section>
+            <h2 class="section-title">🎬 Vídeos educativos</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">🎥</div>
+                    <p>Como identificar os sinais do bullying</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">🎥</div>
+                    <p>O papel dos espectadores - você pode salvar alguém</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">🎥</div>
+                    <p>Cyberbullying: o perigo que vem da tela</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;">🎯 Dica: Busque no YouTube por "bullying educativo" e compartilhe com seus colegas!</p>
         </section>
 
         <!-- Perguntas Frequentes (Accordion) -->
@@ -497,19 +685,23 @@
             <h2 class="section-title">❓ Perguntas frequentes</h2>
             <div class="accordion-item">
                 <div class="accordion-header">O que fazer se meu filho sofre bullying e a escola não age? <span class="arrow">▶</span></div>
-                <div class="accordion-content">Registre tudo por escrito, procure o Conselho Tutelar, e se necessário, acione o Ministério Público. A escola é obrigada por lei a agir.</div>
+                <div class="accordion-content">Registre tudo por escrito, procure o Conselho Tutelar, e se necessário, acione o Ministério Público. A escola é obrigada por lei a agir. Guarde todas as comunicações.</div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">Bullying é crime no Brasil? <span class="arrow">▶</span></div>
-                <div class="accordion-content">Sim, desde 2024 com a Lei 14.811. Bullying pode gerar multa e detenção. Cyberbullying tem pena de 3 a 5 anos.</div>
+                <div class="accordion-content">Sim, desde 2024 com a Lei 14.811. Bullying pode gerar multa e detenção. Cyberbullying tem pena de 3 a 5 anos. Além disso, a escola pode ser responsabilizada civilmente.</div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">Como diferenciar bullying de brincadeira? <span class="arrow">▶</span></div>
-                <div class="accordion-content">Brincadeira é mútua e todos se divertem. Bullying é repetitivo, há desequilíbrio de poder e a vítima sofre.</div>
+                <div class="accordion-content">Brincadeira é mútua e todos se divertem. Bullying é repetitivo, há desequilíbrio de poder e a vítima sofre. Pergunte-se: "Todos estão rindo? Alguém está machucado?"</div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">O que é cyberbullying? <span class="arrow">▶</span></div>
-                <div class="accordion-content">É o bullying praticado em meios digitais: redes sociais, WhatsApp, e-mail, jogos online. Atinge a vítima 24h por dia.</div>
+                <div class="accordion-content">É o bullying praticado em meios digitais: redes sociais, WhatsApp, e-mail, jogos online. Atinge a vítima 24h por dia e pode ser anônimo, o que dificulta a identificação.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Meu filho pratica bullying. O que fazer? <span class="arrow">▶</span></div>
+                <div class="accordion-content">Não ignore. Converse com ele, entenda as causas (pode ser imitação ou dificuldade emocional). Procure ajuda psicológica. Ensine empatia e consequências. A escola pode ajudar com acompanhamento.</div>
             </div>
         </section>
 
@@ -530,6 +722,11 @@
             <p>— Marina, 16 anos. Hoje ela ajuda colegas em seu colégio.</p>
             <button id="ctaModalBtn" class="cta-button">💛 Compartilhe sua experiência ou peça ajuda</button>
         </div>
+
+        <!-- Botão de doação/apoio simbólico -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <button id="supportBtn" style="background: #ffb347; border: none; padding: 14px 28px; border-radius: 60px; font-weight: bold; cursor: pointer;">🤝 Apoie esta causa - Compartilhe este site</button>
+        </div>
     </div>
 </main>
 
@@ -540,9 +737,11 @@
             <a href="#">Canais oficiais de apoio</a>
             <a href="#">Disque 100 (Direitos Humanos)</a>
             <a href="#">Cartilha para escolas</a>
+            <a href="#">Denuncie aqui</a>
         </div>
         <p>© 2025 Escola sem Bullying | Campanha de conscientização e combate ao bullying | Respeito é lei.</p>
         <p style="font-size: 0.8rem;">Em caso de emergência ou risco iminente, procure o conselho tutelar ou polícia mais próxima.</p>
+        <p style="font-size: 0.7rem; margin-top: 1rem;">Site desenvolvido para conscientização - Todo conteúdo é educativo e gratuito.</p>
     </div>
 </footer>
 
@@ -551,7 +750,7 @@
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <h3>💬 Espaço de apoio & denúncia anônima</h3>
-        <p>Você não está sozinho(a). Deixe sua mensagem, desabafo ou denúncia (totalmente anônimo).</p>
+        <p>Você não está sozinho(a). Deixe sua mensagem, desabafo ou denúncia (totalmente anônimo). Sua voz importa.</p>
         <form id="anonymousForm">
             <input type="text" placeholder="Seu nome (opcional)" id="nameInput">
             <textarea rows="3" placeholder="Conte o que está acontecendo ou como podemos te ajudar..." id="msgInput" required></textarea>
@@ -576,7 +775,9 @@
         { question: "Qual lei tornou o bullying crime no Brasil?", options: ["Lei 13.185/2015", "Lei 14.811/2024", "Lei 8.069/1990 (ECA)", "Lei 11.340/2006"], correct: 1 },
         { question: "Cyberbullying é:", options: ["Bullying apenas em jogos", "Bullying praticado em meios digitais", "Apenas comentários em redes sociais", "Menos grave que bullying presencial"], correct: 1 },
         { question: "Qual atitude NÃO é recomendada para quem testemunha bullying?", options: ["Apoiar a vítima", "Rir junto com o agressor", "Informar um adulto", "Convidar a vítima para se sentar perto"], correct: 1 },
-        { question: "Qual a porcentagem aproximada de estudantes que já sofreram bullying (UNESCO)?", options: ["1 em cada 10", "1 em cada 3", "1 em cada 2", "1 em cada 5"], correct: 1 }
+        { question: "Qual a porcentagem aproximada de estudantes que já sofreram bullying (UNESCO)?", options: ["1 em cada 10", "1 em cada 3", "1 em cada 2", "1 em cada 5"], correct: 1 },
+        { question: "Qual dos seguintes NÃO é um tipo de bullying?", options: ["Verbal", "Físico", "Competição saudável", "Cyberbullying"], correct: 2 },
+        { question: "O que os espectadores (testemunhas) podem fazer?", options: ["Apenas observar", "Rir para não ser alvo", "Apoiar a vítima e informar um adulto", "Se juntar ao agressor"], correct: 2 }
     ];
     let currentQuiz = 0;
     let selectedOption = null;
@@ -653,16 +854,16 @@
         const msg = document.getElementById('msgInput').value.trim();
         if (!msg) {
             feedbackSpan.style.color = "#c0392b";
-            feedbackSpan.innerHTML = "⚠️ Por favor, escreva sua mensagem.";
+            feedbackSpan.innerHTML = "⚠️ Por favor, escreva sua mensagem. Sua voz é importante.";
             return;
         }
         const nome = document.getElementById('nameInput').value.trim() || "Anônimo";
         console.log(`Mensagem de ${nome}: ${msg}`);
         feedbackSpan.style.color = "#2c6e2f";
-        feedbackSpan.innerHTML = "✅ Mensagem recebida! Você deu um passo importante. (Simulação educativa)";
+        feedbackSpan.innerHTML = "✅ Mensagem recebida! Você deu um passo importante. Alguém da nossa rede de apoio pode entrar em contato (simulação educativa).";
         document.getElementById('msgInput').value = '';
         document.getElementById('nameInput').value = '';
-        setTimeout(() => { if (modal.style.display === 'flex') feedbackSpan.innerHTML = ''; }, 3000);
+        setTimeout(() => { if (modal.style.display === 'flex') feedbackSpan.innerHTML = ''; }, 4000);
     });
 
     // Scroll suave
@@ -677,6 +878,21 @@
                 if (modal.style.display === 'flex') closeModal();
             }
         });
+    });
+
+    // Contador de visitas simulado
+    let counter = 12847;
+    setInterval(() => {
+        counter += Math.floor(Math.random() * 3);
+        document.getElementById('counterValue').innerText = counter.toLocaleString();
+    }, 8000);
+
+    // Botão de compartilhar
+    document.getElementById('supportBtn')?.addEventListener('click', () => {
+        alert("💛 Compartilhe este site com amigos, pais e professores! Juntos podemos combater o bullying.");
+        if (navigator.share) {
+            navigator.share({ title: 'Escola sem Bullying', url: window.location.href });
+        }
     });
 </script>
 </body>
